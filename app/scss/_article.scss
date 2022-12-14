@@ -1,0 +1,104 @@
+.articles {
+  background-color: $lightGray;
+}
+
+.article {
+
+  &__content {
+
+  }
+
+  &__grid {
+    display: grid;
+    grid-template-columns: 1fr;
+    gap: 1.875rem;
+
+    @include breakpoint-up(medium) {
+      grid-template-columns: repeat(2, 1fr);
+    }
+
+    @include breakpoint-up(large) {
+      grid-template-columns: repeat(4, 1fr);
+    }
+  }
+
+  &__item {
+    display: grid;
+    grid-template-columns: 1fr;
+    grid-template-rows: 12.5rem 1fr;
+    border-radius: .3125rem;
+    overflow: hidden;
+    transition: transform 300ms ease-in-out;
+    box-shadow:
+      0px 0px 2.2px rgba(0, 0, 0, 0.02),
+      0px 0px 5.3px rgba(0, 0, 0, 0.028),
+      0px 0px 10px rgba(0, 0, 0, 0.035),
+      0px 0px 17.9px rgba(0, 0, 0, 0.042),
+      0px 0px 33.4px rgba(0, 0, 0, 0.05),
+      0px 0px 80px rgba(0, 0, 0, 0.07)
+      ;
+
+    &:hover {
+      transform: scale(1.05);
+    }
+
+
+    &:nth-child(1) {
+      .article__image {
+        background-image: url('/images/image-currency.jpg');
+      }
+    }
+
+    &:nth-child(2) {
+      .article__image {
+        background-image: url('/images/image-restaurant.jpg');
+      }
+    
+    }
+    &:nth-child(3) {
+      .article__image {
+        background-image: url('/images/image-plane.jpg');
+      }
+    }
+
+    &:nth-child(4) {
+      .article__image {
+        background-image: url('/images/image-confetti.jpg');
+      }
+    }
+  }
+
+  &__image {
+    background-size: cover;
+    background-repeat: no-repeat;
+    background-position: center;
+  }
+
+  &__text {
+    background-color: $white;
+    color: $grayishBlue;
+    padding: 1.875rem 1.875rem 2.5rem 1.875rem;
+
+    @include breakpoint-up(medium) {
+      padding: 1.875rem 1.5625rem;
+    }
+
+  }
+
+  &__author {
+    font-size: .625rem;
+    margin-bottom: .75rem;
+  }
+
+  &__title {
+    color: $darkBlue;
+    font-size: 1.0625rem;
+    line-height: 1.2;
+    margin-bottom: .5rem;
+  }
+
+  &__description {
+    font-size: .8125rem;
+    margin-bottom: 0;
+  }
+}
